@@ -15,7 +15,7 @@ import {PostService} from '../post.service';
     <div *ngIf="!myForm.controls['email'].valid">Required</div>
     
     <label for="post" >Post</label><br>
-    <textarea name="post" type="text" [formControl]="myForm.controls['post']" patter="[a-zA-Z]{10}" #post></textarea>
+    <textarea name="post" type="text" [formControl]="myForm.controls['post']" pattern=".{10,}" #post></textarea>
     <div *ngIf="!post.valid">Minimum Length 10</div>
     <input type="submit" value="Submit" [disabled]="!myForm.valid" />
     <input type="submit" value="Get Data" (click)="getData(myForm.controls['name'].value)"/>
